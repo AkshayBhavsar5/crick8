@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'; // ADD THIS
-import { authenticateUser } from '@/Store/User/userSlice'; // ADD THIS
-// import { AppDispatch, RootState } from '@/Store'; // ADD THIS
+import { useDispatch, useSelector } from 'react-redux'; 
+import { authenticateUser } from '@/Store/User/userSlice';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -17,8 +16,8 @@ import { Phone, Lock, Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch<any>(); // ADD THIS
-  const { loading, error } = useSelector((state: any) => state.user); // ADD THIS
+  const dispatch = useDispatch<any>(); 
+  const { loading, error } = useSelector((state: any) => state.user); 
 
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');

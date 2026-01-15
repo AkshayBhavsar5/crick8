@@ -2,7 +2,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Index from './pages/Index';
 import MatchDetail from './pages/MatchDetail';
 import ScoringPanel from './pages/ScoringPanel';
@@ -14,6 +14,12 @@ import { AuthGuard } from './components/AuthGuard';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 const routes = [
+  {
+    path: '/',
+    element: <Navigate to="/login" replace />,
+    protected: false,
+    authGuard: false,
+  },
   {
     path: '/login',
     element: <Login />,
